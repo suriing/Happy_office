@@ -1,6 +1,7 @@
 ;AutoCAD related scripts
 
-^#P::
+ACADPub()
+{
 ;목적 : 현재폴더 dwg 파일 AutoCAD Publish 리스트에 넣기
 ;추가 필요 프로그램 : FreeCommander(XE)
 IfWinExist  FreeCommander	;FreeCommander 실행여부 확인
@@ -38,6 +39,7 @@ else
 	}
 	}
 return
+}
 
 ACADPubSub()
 {
