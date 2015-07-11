@@ -57,7 +57,7 @@ IfWinActive %ACADPubWinName%
 WinActivate
 }
 winwaitactive %ACADPubWinName%
-ImageSearch, Xpos, Ypos,1,1,900,630, %A_ScriptDir%\AddDWG.png
+ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\AddDWG.png
 Xpos:=Xpos+100
 Ypos:=Ypos+100
 Click right %Xpos%, %Ypos%
@@ -75,10 +75,10 @@ MsgBox,,Updating...,Please wait until drawing list is updated. ;Pause while draw
 winwaitactive %ACADPubWinName%
 Click  %Xpos%, %Ypos%
 send ^a
-ImageSearch, Xpos, Ypos,1,1,900,630, %A_ScriptDir%\PageSet.png
+ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\PageSet.png
 Ypos:=Ypos+25
 Click  %Xpos%, %Ypos%
-ImageSearch, Xpos, Ypos,1,1,900,630, %A_ScriptDir%\ExportFrom.png
+ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\ExportFrom.png
 Xpos:=Xpos+31
 Ypos:=Ypos+7
 Click  %Xpos%, %Ypos%

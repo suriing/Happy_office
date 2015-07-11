@@ -11,11 +11,11 @@ inputbox FormatSetting1,Enter Document type : original or pdf  ;Select file type
 {
 if FormatSetting1=original
 {
-FormatSetting=%A_ScriptDir%\DDMSOriDown.png
+FormatSetting=%A_WorkingDir%\DDMSOriDown.png
 }
 else if FormatSetting1=pdf
 {
-FormatSetting=%A_ScriptDir%\DDMSPdfDown.png
+FormatSetting=%A_WorkingDir%\DDMSPdfDown.png
 }
 else  ;if you didn't type original of PDF, script is ended.
 {
@@ -35,7 +35,7 @@ Xpos:=Xpos+6
 Ypos:=Ypos+6
 click %Xpos%, %Ypos%
 winwaitactive File Download
-ImageSearch, mX, mY,1,1,1298,437, %A_ScriptDir%\Save.png
+ImageSearch, mX, mY,1,1,1298,437, %A_WorkingDir%\Save.png
 click %mX%, %mY%
 winwaitactive 다른 이름으로 저장
 send {enter}
@@ -64,10 +64,10 @@ DDMSWorkspacePermit()
 {
 ;목적 : Workspace 권한 일괄변경
 ;추가 필요 프로그램 : None
-Permissions=%A_ScriptDir%\Permissions.png
-Addbutton=%A_ScriptDir%\Add.png
-Choosetarget=%A_ScriptDir%\choose.png
-Arrow=%A_ScriptDir%\Arrow.png
+Permissions=%A_WorkingDir%\Permissions.png
+Addbutton=%A_WorkingDir%\Add.png
+Choosetarget=%A_WorkingDir%\choose.png
+Arrow=%A_WorkingDir%\Arrow.png
 
 winwaitactive Properties: Info
 ImageSearch, Xpos, Ypos,1,1,610,590, %Permissions%
