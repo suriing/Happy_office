@@ -46,33 +46,28 @@ ACADPubSub()
 ;목적 : FreeCommander에서 가져온 폴더경로를 AutoCAD Publish에 입력한다
 ;추가 필요 프로그램 : FreeCommander(XE)
 ;추가 파일 : AddDWG.png / PageSet.png / ExportFrom.png
-;Language setting
-ACADPubWinName="게시"	;check Publish window name
-ACADDwgSelWinName="도면 선택"	;check select drawing window name
-ACADTempSelWinName="게시에 대한 페이지 설정 가져오기"	;check select template window name
-;;
 send publish{space}	;ACAD Publish 수행
-IfWinActive %ACADPubWinName%
+IfWinActive 게시
 {
 WinActivate
 }
-winwaitactive %ACADPubWinName%
+winwaitactive 게시
 ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\AddDWG.png
 Xpos:=Xpos+100
 Ypos:=Ypos+100
 Click right %Xpos%, %Ypos%
 sleep	200
 send v
-winwaitactive %ACADPubWinName%
+winwaitactive 게시
 Click right %Xpos%, %Ypos%
 sleep	200
 send a
-winwaitactive %ACADDwgSelWinName%
+winwaitactive 도면 선택
 send ^v
 send {enter}
-winwaitactive %ACADPubWinName%
+winwaitactive 게시
 MsgBox,,Updating...,Please wait until drawing list is updated. ;Pause while drawing list loaded
-winwaitactive %ACADPubWinName%
+winwaitactive 게시
 Click  %Xpos%, %Ypos%
 send ^a
 ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\PageSet.png
@@ -82,7 +77,7 @@ ImageSearch, Xpos, Ypos,1,1,900,630, %A_WorkingDir%\ExportFrom.png
 Xpos:=Xpos+31
 Ypos:=Ypos+7
 Click  %Xpos%, %Ypos%
-winwaitactive %ACADTempSelWinName%
+winwaitactive 게시에 대한 페이지 설정 가져오기
 send %A_MyDocuments%\AutoCAD_Template	;set your ACAD template folder
 send {enter}
 return
