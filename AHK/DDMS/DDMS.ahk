@@ -4,7 +4,7 @@ DDMSMutiDown()
 ;추가 필요 프로그램 : None
 wingettitle, ddms,a	;현재 창이름을 ddms로 저장
 winrestore, %ddms%
-WinMove, %ddms%,,64,0,1320,465 ;스크립트에 맞는 사이즈로 창크기 변경
+WinMove, %ddms%,,,, 1310, 450 ;스크립트에 맞는 사이즈로 창크기 변경
 send ^0
 setkeydelay 300
 inputbox FormatSetting1,Enter Document type : original or pdf  ;Select file type
