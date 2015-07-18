@@ -3,7 +3,7 @@ clipboard_1=Input
 clipboard_2=what you want
 clipboard_3=to paste
 
-SetMultiClip() ;Multi clipboard setting
+^#c:: ;Multi clipboard setting
 {
 Gui, Add, Button, x50 y150 w100 h30 , OK
 Gui, Add, Button, x236 y600 w50 h-170 , Button
@@ -24,7 +24,7 @@ gui, destroy							;gui로 생성된 창 destroy※안하면 다음번 실행 불가
 return
 }
 
-PasteMultiClip() ;다중 클립보드 붙여넣기
+#v:: ;다중 클립보드 붙여넣기
 {
 wingettitle, title,a						;현재 창이름을 title변수에 저장
 Gui, Add, Button, x200 y150 w100 h30 , &Cancel ;C 앞에 &을 붙임으로써 단축키 활성화
